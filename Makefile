@@ -3,11 +3,6 @@
 # Main document name (without extension)
 MAIN = main
 
-# PDF viewer command (uncomment and modify as needed)
-# PDFVIEWER = evince
-# PDFVIEWER = okular
-# PDFVIEWER = xpdf
-
 # Default target
 all: $(MAIN).pdf
 
@@ -28,8 +23,8 @@ $(MAIN).aux: $(MAIN).tex
 clean:
 	rm -f $(MAIN).aux $(MAIN).bbl $(MAIN).blg $(MAIN).log $(MAIN).out $(MAIN).pdf
 
-# View PDF (uncomment and modify as needed)
-# view: $(MAIN).pdf
-# 	$(PDFVIEWER) $(MAIN).pdf &
+# View PDF - update with whatever pdf viewer you want to use (I use Zathura)
+view: $(MAIN).pdf
+	zathura $(MAIN).pdf
 
 .PHONY: all clean view 
